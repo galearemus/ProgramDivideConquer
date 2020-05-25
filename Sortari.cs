@@ -5,9 +5,16 @@ using System.Text;
 namespace DivideConquer
 {
     //Aceasta clasa detine totalitatea functilor pentru sortarea vectorilor.
+    //
     class Sortari
     {
         //Functie de imbinare pentru MergeSort
+        //Algoritmul Merge Sort este un algoritm efficient si pentru scop general
+        //de sortare a datelor . Acest algoritm are la baza metoda DivideEtImpera
+        //deoarece el desface o lista in mai multe subliste pe care apoi ajunge sa le combine
+        //pana cand ramane cate un sigur element, comparand dupa toate sublistele.
+        //Algoritmul a fost inventat de Goldstine si von Neumann in 1948 si are o 
+        //performanta de O(n log n ).
         private static void Merge(int[] input, int left, int middle, int right)
         {
 
@@ -76,8 +83,17 @@ namespace DivideConquer
             // urmatorul pas
             return arraySortedOrNot(arr, n - 1);
         }
-        /* Functia principala de Sortare QuickSort
-        arr[] --> vector pentru sortare, 
+        // Functia principala de Sortare QuickSort
+        //Algoritmul QuickSort este unul dintre cele mai eficiente algoritmuri de sortare
+        //si sigur cel mai eficient astfel de algoritm cu implementare simpla. El a fost 
+        //dezvoltat in 1959 de catre Tony Hoare si a ajuns sa fie folosit chiar si in zilele 
+        //noastre datorita eficientei lui. La baza conceptului se afla, de asemenea, metoda 
+        // Divide Et Impera deoarece acesta se foloseste de un index pe care il aplica 
+        //partitionand elementele in subliste mai mici , care crescator ajung sa fie ordonate.
+        //In cel mai bun timp rezultat isi conduce competitori(merge si heapsort) de 2-3 ori
+        // ca performanta dar poate sa se extinda pana la o eficienta de O(n^2)
+         
+        /*arr[] --> vector pentru sortare, 
         low --> index pornire, 
         high --> index final */
         public static void QuickSort(int[] arr, int low, int high, int dim)
