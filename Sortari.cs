@@ -157,5 +157,53 @@ namespace DivideConquer
             }
             return -1;
         }
+        //Urmatoarele 2 functii reprezinta sortarea BubbleSort, care este cea mai
+        //inceata dintre toate sortarile tratate
+        public static void Swap(ref int a, ref int b)
+        {
+            int aux = a;
+            a = b;
+            b = aux;
+        }
+        //Functia Principala pentru Sortarea BubbleSort
+        public static int[] BubbleSort(int[] v)
+        {
+            int k = 0;
+            bool ok;
+            do
+            {
+                ok = false;
+                for (int i = 0; i < v.Length - 1 - k; i++)
+                    if (v[i] > v[i + 1])
+                    {
+                        Swap(ref v[i], ref v[i + 1]);
+                        ok = true;
+                    }
+                k++;
+            } while (ok);
+            return v;
+        }
+        //Urmatoarea Functie returneaza vectorul sortat prin metoda Selectiei
+        public static int[] SelectionSort(int[] v)
+        {
+            for (int j = 0; j < v.Length; j++)
+            {
+                int poz = j;
+                for (int i = j + 1; i < v.Length; i++)
+                    if (v[i] < v[poz])
+                        poz = i;
+                Swap(ref v[j], ref v[poz]);
+            }
+            return v;
+        }
+        //Urmatoarea Functie returneaza vectorul sortat prin metoda insertiei
+        public static int[] InsertionSort(int[] v)
+        {
+            for (int j = 1; j < v.Length; j++)
+                for (int i = j; i > 0; i--)
+                    if (v[i] < v[i - 1])
+                        Swap(ref v[i], ref v[i - 1]);
+            return v;
+        }
     }
 }

@@ -310,7 +310,6 @@ namespace DivideConquer
         //Functia Main care doar face apel la Meniu
         static void Main(string[] args)
         {
-
             MainMenu();
         }
     }
